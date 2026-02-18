@@ -29,7 +29,7 @@ That's it. No scripts, no manual version bumping. The cask resolves the latest v
 
 ## How it works
 
-The cask runs an inline `curl` during evaluation to fetch the latest version string from Anthropic's GCS bucket, then uses that as the download URL. Brew compares the resolved version against what's installed and upgrades when needed.
+The cask runs an inline `curl` during evaluation to fetch the latest version string from Anthropic's GCS bucket, then uses that as the download URL. It also fetches `manifest.json` for the resolved version to verify the binary's SHA-256 checksum. Brew compares the resolved version against what's installed and upgrades when needed.
 
 ## Uninstall
 
